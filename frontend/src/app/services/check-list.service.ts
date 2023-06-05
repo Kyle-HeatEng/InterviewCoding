@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, map, startWith, tap } from 'rxjs';
+import { Subject, map, startWith } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -71,6 +71,7 @@ export class CheckListService {
       isFront: true,
     },
   ];
+
   constructor() {}
 
   private changeInCheckListFront$$ = new Subject<{

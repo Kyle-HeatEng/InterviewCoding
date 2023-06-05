@@ -1,7 +1,11 @@
-<div class="card" style="background-color: #CF6725;">
-  <div class="row " (click)="updateCheckList()">
-    <h3 class="col m-0 btn text-white" *ngIf="checkListItem.isCompleted">🌟 Step: {{checkListItem.step}}</h3>
-    <h3 class="col m-0 btn text-white" *ngIf="!checkListItem.isCompleted">🔴 Step: {{checkListItem.step}}</h3>
+<div class="carousel p-4" style="background-color: #CF6725;">
+  <div role="button" class="row p-1 m-3" (click)="updateCheckList()">
+    <h3 class="col p-2 text-center text-white" *ngIf="!checkListItem.isCompleted">
+      < = | < 🙈 > | = >
+    </h3>
+    <h3 class="col p-2 text-center text-white hove" *ngIf="checkListItem.isCompleted">
+      < i | | 🪬 | | i >
+    </h3>
   </div>
 
   <div class="container row text-white card-body">
