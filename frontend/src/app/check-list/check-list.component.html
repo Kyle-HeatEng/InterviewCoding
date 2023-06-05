@@ -1,15 +1,15 @@
 <ng-container *ngIf="vm$ | async as vm">
-  <h4 class="text-center p-3">Percentage Completed: {{vm.percentageCompleted}} %</h4>
+  <h4 class="text-center text-white p-3">Percentage Completed: {{vm.percentageCompleted}} %</h4>
   <div class="container">
     <div class="row">
       <div class="col">
-        <h5 class="text-center p-3">Back End</h5>
+        <h5 class="text-center text-white p-3">Back End</h5>
           <div class="row m-2" *ngFor="let item of vm.backEndCheckList">
             <app-check-list-item [checkListItem]="item"></app-check-list-item>
           </div>
       </div>
       <div class="col">
-        <h5 class="text-center p-3">Front End</h5>
+        <h5 class="text-center p-3 text-white">Front End</h5>
           <div class="row m-2" *ngFor="let item of vm.frontEndCheckList">
             <app-check-list-item [checkListItem]="item"></app-check-list-item>
           </div>

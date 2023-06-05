@@ -1,9 +1,10 @@
-<div class="card">
-  <div class="row" (click)="updateCheckList()">
-    <h5 class="col m-0 btn" *ngIf="checkListItem.isCompleted">🌟 Step: {{checkListItem.step}}</h5>
-    <h5 class="col m-0 btn" *ngIf="!checkListItem.isCompleted">🔴 Step: {{checkListItem.step}}</h5>
+<div class="card" style="background-color: #CF6725;">
+  <div class="row " (click)="updateCheckList()">
+    <h3 class="col m-0 btn text-white" *ngIf="checkListItem.isCompleted">🌟 Step: {{checkListItem.step}}</h3>
+    <h3 class="col m-0 btn text-white" *ngIf="!checkListItem.isCompleted">🔴 Step: {{checkListItem.step}}</h3>
   </div>
-  <div class="container row">
+
+  <div class="container row text-white card-body">
     <div class="row m-3" *ngFor="let info of checkListItem.info">
       {{info}}
     </div>
