@@ -84,36 +84,36 @@ export class CheckListService {
 
   public frontEndCheckList$ = this.changeInCheckListFront$$.asObservable().pipe(
     map((checkList) => {
-      const currentStorage = sessionStorage.getItem('FrontEndCheckList');
+      const currentStorage = localStorage.getItem('FrontEndCheckList');
       const parsedCurrentStorage = JSON.parse(currentStorage!);
       if (!currentStorage || !parsedCurrentStorage) {
-        const newSessionStorage = this.initalFrontEndSteps.map((step) => {
+        const newLocalStorage = this.initalFrontEndSteps.map((step) => {
           if (step.step === checkList.step) {
             return checkList;
           }
           return step;
         });
-        sessionStorage.setItem(
+        localStorage.setItem(
           'FrontEndCheckList',
-          JSON.stringify(newSessionStorage)
+          JSON.stringify(newLocalStorage)
         );
-        return newSessionStorage;
+        return newLocalStorage;
       }
-      const updateSessionStorage = parsedCurrentStorage.map((step: any) => {
+      const updateLocalStorage = parsedCurrentStorage.map((step: any) => {
         if (step.step === checkList.step) {
           return checkList;
         }
         return step;
       });
-      sessionStorage.setItem(
+      localStorage.setItem(
         'FrontEndCheckList',
-        JSON.stringify(updateSessionStorage)
+        JSON.stringify(updateLocalStorage)
       );
-      return updateSessionStorage;
+      return updateLocalStorage;
     }),
     startWith(
-      sessionStorage.getItem('FrontEndCheckList')
-        ? JSON.parse(sessionStorage.getItem('FrontEndCheckList')!)
+      localStorage.getItem('FrontEndCheckList')
+        ? JSON.parse(localStorage.getItem('FrontEndCheckList')!)
         : this.initalFrontEndSteps
     )
   );
@@ -128,36 +128,36 @@ export class CheckListService {
   };
   public backEndCheckList$ = this.changeInCheckListBack$$.asObservable().pipe(
     map((checkList) => {
-      const currentStorage = sessionStorage.getItem('BackEndCheckList');
+      const currentStorage = localStorage.getItem('BackEndCheckList');
       const parsedCurrentStorage = JSON.parse(currentStorage!);
       if (!currentStorage || !parsedCurrentStorage) {
-        const newSessionStorage = this.initalBackEndSteps.map((step) => {
+        const newLocalStorage = this.initalBackEndSteps.map((step) => {
           if (step.step === checkList.step) {
             return checkList;
           }
           return step;
         });
-        sessionStorage.setItem(
+        localStorage.setItem(
           'BackEndCheckList',
-          JSON.stringify(newSessionStorage)
+          JSON.stringify(newLocalStorage)
         );
-        return newSessionStorage;
+        return newLocalStorage;
       }
-      const updateSessionStorage = parsedCurrentStorage.map((step: any) => {
+      const updateLocalStorage = parsedCurrentStorage.map((step: any) => {
         if (step.step === checkList.step) {
           return checkList;
         }
         return step;
       });
-      sessionStorage.setItem(
+      localStorage.setItem(
         'BackEndCheckList',
-        JSON.stringify(updateSessionStorage)
+        JSON.stringify(updateLocalStorage)
       );
-      return updateSessionStorage;
+      return updateLocalStorage;
     }),
     startWith(
-      sessionStorage.getItem('BackEndCheckList')
-        ? JSON.parse(sessionStorage.getItem('BackEndCheckList')!)
+      localStorage.getItem('BackEndCheckList')
+        ? JSON.parse(localStorage.getItem('BackEndCheckList')!)
         : this.initalBackEndSteps
     )
   );
