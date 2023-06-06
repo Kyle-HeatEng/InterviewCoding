@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent {
+  constructor(private router: Router) {}
+
   public backendSteps: string[] = [
     `Create a model of notes here is the interface for notes.
 
@@ -37,4 +40,8 @@ export class HomeComponent {
     A more advanced answer will subscribe using the async pipe line to the changes in the form which will trigger an emission in the behabour subject causing the notesList$ stream to update. This will create the illusion of instant access to the database for the user.
     `,
   ];
+
+  public navigateToTest() {
+    this.router.navigate(['test']);
+  }
 }

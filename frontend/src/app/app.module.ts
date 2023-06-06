@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CheckListComponent } from './check-list/check-list.component';
 import { CheckListItemComponent } from './check-list-item/check-list-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     CheckListComponent,
     CheckListItemComponent,
+    TestComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
